@@ -1,0 +1,50 @@
+﻿@model AFIProjekt.Models.Matches
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Matches</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Name2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Match)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Match)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
