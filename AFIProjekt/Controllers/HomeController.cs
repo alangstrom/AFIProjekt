@@ -21,8 +21,8 @@ namespace AFIProjekt.Controllers
                 response.EnsureSuccessStatusCode();
                 string result = response.Content.ReadAsStringAsync().Result;
                 System.Diagnostics.Debug.Write("Result: " + result);
+                ViewBag.Result = result;
             }
-            Console.ReadLine();
             return View();
         }
 
