@@ -26,7 +26,14 @@ namespace AFIProjekt.Controllers
             return View();
         }
 
-       
+       public ActionResult LoveCalculator()
+        {
+            Random random = new Random();
+            int love = random.Next(1, 100);
+            ViewBag.loveValue = love;
+
+            return View();
+        }
 
         public ActionResult About()
         {
