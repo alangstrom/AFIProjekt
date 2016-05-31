@@ -127,3 +127,12 @@ header{
 	opacity: 0;
 	border: solid green 2px;
 }
+
+#poster {
+    width:100%;
+    height:auto;
+}
+
+.movietitlediv {
+    text-align:center;
+}

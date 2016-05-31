@@ -1,22 +1,60 @@
-﻿
-@{
+﻿@{
+    ViewBag.Title = "Netflix and Chill";
     Layout = null;
 }
 
 <!DOCTYPE html>
-
-<html>
+<HTML>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Love</title>
+
+
+    <meta charset="UTF-8">
+    <link href="//db.onlinewebfonts.com/c/ab83b275830b2d585ea027c47e3b237a?family=GraphiqueW01-Regular" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    @Styles.Render("~/Content/stilmall.css")
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+
 </head>
 <body>
-    <div> 
-        @ViewBag.Movietitle
-        <img src="@ViewBag.Poster" />
-        @ViewBag.Plot
-        @ViewBag.Rating
-        @ViewBag.LoveValue
-    </div>
-</body>
-</html>
+    <container>
+        <header>
+            <div id="headerdiv">
+                <div id="headercolor">
+                    <img id="netflix" src="@Url.Content("~/Content/img/Netflix_logo.png")" alt="netflixlogo">
+                </div>
+                <div>
+                    <p id="logotext"> and chill </p>
+                </div>
+            </div>
+        </header>
+            <div class="container">
+                    <div class="movietitlediv">
+                        <h2 id="movietitle">ITS A MATCH: @ViewBag.LoveValue%</h2>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img id="poster" src="@ViewBag.Poster" />
+
+                    </div>
+                    <div class="col-md-8">
+                        <p id="percent">@ViewBag.Plot</p>
+
+                    </div>
+                </div>
+                
+                
+
+                @ViewBag.Rating
+                
+            </div>
+        </body>
+</HTML>
+

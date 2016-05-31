@@ -6,6 +6,7 @@ using System.Web.Mvc;
 //Request library
 using System.Net;
 using System.Net.Http;
+using AFIProjekt.Models;
 
 namespace AFIProjekt.Controllers
 {
@@ -17,20 +18,23 @@ namespace AFIProjekt.Controllers
             return View();
         }
 
+
+
        public ActionResult LoveCalculator()
         {
+            Movie m = new Movie();
+            string movie = m.getRandomMovie();
+            System.Diagnostics.Debug.Write("MovieId: " + movie);
 
-            AFIProjektEntities1 db = new AFIProjektEntities1();
             Random random = new Random();
             int love = random.Next(1, 100);
-            int movieid = random.Next(0, 10);
 
             ViewBag.loveValue = love;
             System.Diagnostics.Debug.Write("Making API Call...");
             using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
             {
                 client.BaseAddress = new Uri("http://www.omdbapi.com/");
-                HttpResponseMessage response = client.GetAsync("?i=tt0338013").Result;
+                HttpResponseMessage response = client.GetAsync("?i="+movie).Result;
                 response.EnsureSuccessStatusCode();
                 string result = response.Content.ReadAsStringAsync().Result;
                 System.Diagnostics.Debug.Write("Result: " + result);
