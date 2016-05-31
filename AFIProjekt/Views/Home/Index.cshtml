@@ -121,11 +121,11 @@
 
             @using (Html.BeginForm("LoveCalculator", "Home", FormMethod.Post, new { @class = "form-horizontal names-form" }))
             {
-                <div class="col-xs-4">
-                    @Html.TextBox("name1", "", new { @class = "form-control" , placeholder ="Name 1" });
+                <div class="col-xs-3 col-xs-offset-3">
+                    @Html.TextBox("name1", "", new { @class = "form-control" , placeholder ="Name 1" })
                 </div>
-                <div class="col-xs-4">
-                    @Html.TextBox("name2", "", new { @class = "form-control", placeholder = "Name 1" });
+                <div class="col-xs-3">
+                    @Html.TextBox("name2", "", new { @class = "form-control", placeholder = "Name 2" })
                 </div>
 
                 <input type="submit" class="btn btn-default" />
