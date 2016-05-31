@@ -19,6 +19,8 @@ namespace AFIProjekt.Controllers
 
        public ActionResult LoveCalculator()
         {
+
+            AFIProjektEntities1 db = new AFIProjektEntities1();
             Random random = new Random();
             int love = random.Next(1, 100);
             int movieid = random.Next(0, 10);
