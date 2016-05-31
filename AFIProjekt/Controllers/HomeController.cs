@@ -21,6 +21,11 @@ namespace AFIProjekt.Controllers
                 response.EnsureSuccessStatusCode();
                 string result = response.Content.ReadAsStringAsync().Result;
                 System.Diagnostics.Debug.Write("Result: " + result);
+                dynamic json = Newtonsoft.Json.JsonConvert.DeserializeObject(result);
+                ViewBag.Movietitle = (string)json.Title;
+                ViewBag.Poster = (string)json.Poster;
+                ViewBag.Plot = (string)json.Plot;
+                ViewBag.Rating = (string)json.imdbRating;
                 ViewBag.Result = result;
             }
             return View();
@@ -32,7 +37,7 @@ namespace AFIProjekt.Controllers
             int love = random.Next(1, 100);
             ViewBag.loveValue = love;
 
-            return View();
+            return View("Love");
         }
 
         public ActionResult About()

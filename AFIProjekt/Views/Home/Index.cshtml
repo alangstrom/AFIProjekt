@@ -1,29 +1,148 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Netflix and Chill";
+    Layout = null;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<HTML>
+<head>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            @ViewBag.Result
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    
+    <meta charset="UTF-8">
+    <link href="//db.onlinewebfonts.com/c/ab83b275830b2d585ea027c47e3b237a?family=GraphiqueW01-Regular" rel="stylesheet">
+    @Styles.Render("~/Content/stilmall.css")
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <script>
+		$(document).ready(function(){
+		    $('div.hidden').fadeIn(5000).removeClass('hidden');
+		        /*$("#div2").fadeIn("slow");
+		        $("#div3").fadeIn(3000);*/
+		});
+    </script>
+    <script>
+		$(document).ready(function() {
+
+		    /* Every time the window is scrolled ... */
+		    $(window).scroll( function(){
+
+
+		    	if(window.pageYOffset >= 1000){
+			        /* Check the location of each desired element */
+			        $('.hideme').each( function(i){
+
+			            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+			            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+		            	/* If the object is completely visible in the window, fade it it */
+		            	if( bottom_of_window > bottom_of_object ){
+
+		                	$(this).animate({'opacity':'1'},2500);
+
+		            	}
+		            	else { //object goes out of view (scrolling up)
+					        if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+					    }
+
+
+		        	});
+		        }
+
+		        if(window.pageYOffset >= 2000){
+		        	/* Check the location of each desired element */
+			        $('.hideme2').each( function(i){
+
+			            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+			            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+		            	/* If the object is completely visible in the window, fade it it */
+		            	if( bottom_of_window > bottom_of_object ){
+
+		                	$(this).animate({'opacity':'1'},2500);
+
+		            	}
+
+		        	});
+		        }
+
+		        if(window.pageYOffset >= 3000){
+		        	/* Check the location of each desired element */
+			        $('.hideme3').each( function(i){
+
+			            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+			            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+		            	/* If the object is completely visible in the window, fade it it */
+		            	if( bottom_of_window > bottom_of_object ){
+
+		                	$(this).animate({'opacity':'1'},2500);
+
+		            	}
+
+		        	});
+		        }
+
+		    });
+		});
+    </script>
+    <!--
+    <script>
+    jQuery(document).ready(function(){
+        window.onscroll = function() {
+            if (window.pageYOffset >= 500){
+                jQuery('#heart-text').css({position: 'fixed'});
+            }
+            else {
+                jQuery('#heart-text').css({position: ''});
+            }
+        }
+    });
+    </script>
+    -->
+
+</head>
+<body>
+    <container>
+        <header>
+            <div id="headerdiv">
+                <div id="headercolor">
+                    <img id="netflix" src="@Url.Content("~/Content/img/Netflix_logo.png")" alt="netflixlogo">
+                </div>
+                <div class="hidden">
+                    <p id="logotext"> and chill </p>
+                </div>
+            </div>
+        </header>
+
+        
+        <div>
+            <div id="icons">
+                <img id="heart" src="@Url.Content("~/Content/img/heart.png")" alt="heart">
+                <img id="pizza" src="@Url.Content("~/Content/img/truck.png")" alt="pizza">
+                <img id="TV" src="@Url.Content("~/Content/img/TV.png")" alt="TV">
+            </div>
+            <div id="heart-text">
+                <div class="hideme">
+                    <h3> Love at first sight </h3>
+                </div>
+                <div class="hideme2">
+                    <h3> Here comes pizza! </h3>
+                </div>
+                <div class="hideme3">
+                    <h3> Flix some love action </h3>
+                </div>
+            </div>
+            <div id="tom">
+                <img id="pizza2" src="@Url.Content("~/Content/img/pizza2.png")" alt="pizza">
+            </div>
+        </div>
+
+        <footer>@ViewBag.Movietitle
+        <img src="@ViewBag.Poster" />
+        @ViewBag.Plot
+        @ViewBag.Rating</footer>
+    </container>
+</body>
+</HTML>
