@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9541b8b8ae9d416daf527e09d57c08ed" Name="Diagram1">
         <EntityTypeShape EntityType="AFIProjektModel.Matches" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AFIProjektModel.Movies" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

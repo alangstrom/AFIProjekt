@@ -13,6 +13,17 @@ namespace AFIProjekt.Controllers
     {
         public ActionResult Index()
         {
+            
+            return View();
+        }
+
+       public ActionResult LoveCalculator()
+        {
+            Random random = new Random();
+            int love = random.Next(1, 100);
+            int movieid = random.Next(0, 10);
+
+            ViewBag.loveValue = love;
             System.Diagnostics.Debug.Write("Making API Call...");
             using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
             {
@@ -28,15 +39,6 @@ namespace AFIProjekt.Controllers
                 ViewBag.Rating = (string)json.imdbRating;
                 ViewBag.Result = result;
             }
-            return View();
-        }
-
-       public ActionResult LoveCalculator()
-        {
-            Random random = new Random();
-            int love = random.Next(1, 100);
-            ViewBag.loveValue = love;
-
             return View("Love");
         }
 
