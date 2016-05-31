@@ -20,10 +20,13 @@ namespace AFIProjekt.Controllers
 
 
 
-       public ActionResult LoveCalculator()
+       public ActionResult LoveCalculator(string name1, string name2)
         {
-            Movie m = new Movie();
-            string movie = m.getRandomMovie();
+            ViewBag.name1 = name1;
+            ViewBag.name2 = name2;
+
+            
+            string movie = new Movie().getRandomMovie();
             System.Diagnostics.Debug.Write("MovieId: " + movie);
 
             Random random = new Random();
@@ -34,7 +37,7 @@ namespace AFIProjekt.Controllers
             using (var client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate }))
             {
                 client.BaseAddress = new Uri("http://www.omdbapi.com/");
-                HttpResponseMessage response = client.GetAsync("?i="+movie).Result;
+                HttpResponseMessage response = client.GetAsync("?i="+movie+"&plot=full").Result;
                 response.EnsureSuccessStatusCode();
                 string result = response.Content.ReadAsStringAsync().Result;
                 System.Diagnostics.Debug.Write("Result: " + result);

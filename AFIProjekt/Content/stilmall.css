@@ -18,6 +18,16 @@ header{
 	text-align: center;
 }
 
+
+#loverow{
+    margin-top:60px;
+}
+
+#loverow * {
+    text-align:center;
+}
+
+
 #headercolor{
 	background-color: #B9090B;
 	padding-top: 10%;
@@ -40,6 +50,11 @@ header{
 	z-index: 2;
 	text-align: center;
 	border-bottom: solid black 2px;
+}
+
+.name {
+    font-family: 'FlixFont', Helvetica;
+    font-size:140px;
 }
 
 .names-form {
@@ -133,6 +148,24 @@ header{
     height:auto;
 }
 
+#movietitle {
+    font-family: 'FlixFont', Helvetica;
+    font-size:150px;
+}
+
+#plot {
+    font-size:17px;
+}
+
 .movietitlediv {
     text-align:center;
+}
+
+.iframe {
+    text-align:center;
+}
+
+#rating {
+    font-weight:bold;
+    font-size:20px;
 }

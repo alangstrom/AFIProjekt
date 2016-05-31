@@ -33,26 +33,53 @@
             </div>
         </header>
             <div class="container">
-                    <div class="movietitlediv">
-                        <h2 id="movietitle">ITS A MATCH: @ViewBag.LoveValue%</h2>
+                <div class="row" id="loverow">
+                    <div class="col-md-4">
+                        <p class="name">@ViewBag.name1</p>
 
 
+                    </div>
+                    <div class="col-md-4">
+                        <img id="heart" src="@Url.Content("~/Content/img/heart.png")" alt="heart">
+
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="name">@ViewBag.name2</p>
+
+                    </div>
 
                 </div>
-                <div class="row">
+                    <div class="movietitlediv">
+                        <h1 id="movietitle">IT'S A @ViewBag.LoveValue% LOVE MATCH!</h1>
+
+                </div>
+                <h2 style="text-align:center;">
+                    Make the most out of your match! Here is some tips for the night!
+                </h2>
+                <div class="row" style="margin-top: 60px;">
                     <div class="col-md-4">
                         <img id="poster" src="@ViewBag.Poster" />
 
                     </div>
                     <div class="col-md-8">
-                        <p id="percent">@ViewBag.Plot</p>
-
+                        <h2>@ViewBag.Movietitle</h2>
+                        <p id="plot">@ViewBag.Plot</p>
+                        <p id="rating">Imdb rating: @ViewBag.Rating</p>
                     </div>
                 </div>
-                
+                <div class="movietitlediv">
+                    <h1 id="pizzah1">Get your pizza on a restaurant near you</h1>
+                </div>
+                <div class="iframe">
+                    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=pizza&key=AIzaSyBK9HLXMscqbhZKTgcHrjXdohbtSX8gjfg" allowfullscreen></iframe>
+                    <br />
+                    <br />
+                 </div>
+
                 
 
-                @ViewBag.Rating
                 
             </div>
         </body>
